@@ -62,7 +62,7 @@ class Busquedas {
 
         try {
             
-            const resp = await axios.get(`https://api.openweathermap.org/data/2.5/weather?${'lat='+lat}&${'lon='+long}&appid=0ad9c021d63172a6696b7c1d472b2c05&units=metric&lang=es`)
+            const resp = await axios.get(`https://api.openweathermap.org/data/2.5/weather?${'lat='+lat}&${'lon='+long}&appid=${process.env.OPENWEATHER_KEY}`)
             const { weather, main } = resp.data;
             
             return {
